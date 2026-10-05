@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF8F0">
+  <meta name="description" content="Play classic 2048. Slide, merge, and find your next move. Your game saves on this device.">
+  <title>Play2048 Classic</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header class="header">
+      <h1>2048<span>Classic</span></h1>
+      <div class="scores" aria-label="Game scores">
+        <div class="score"><span>Score</span><strong id="score">0</strong></div>
+        <div class="score"><span>Best</span><strong id="best">0</strong></div>
+      </div>
+    </header>
+    <div class="intro">
+      <p>Small moves.<br><strong>Big possibilities.</strong></p>
+      <button id="new-game" type="button">New Game</button>
+    </div>
+    <div class="board-wrap">
+      <section id="board" class="board" tabindex="0" aria-label="2048 game board" aria-describedby="instructions">
+        <div class="cells" aria-hidden="true"></div>
+        <div id="tiles" class="tiles" aria-hidden="true"></div>
+        <div id="accessible-board" class="sr-only" role="grid" aria-label="Tile positions" aria-rowcount="4" aria-colcount="4"></div>
+      </section>
+      <section id="overlay" class="overlay" aria-labelledby="result-title" hidden>
+        <div class="result">
+          <h2 id="result-title"></h2>
+          <p id="result-detail"></p>
+          <div class="result-actions">
+            <button id="keep-going" type="button">Keep Going</button>
+            <button id="try-again" type="button">Try Again</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <p class="move-hint">Slide. Merge. Repeat.</p>
+    <section id="instructions" class="instructions" aria-label="How to play">
+      <h2>Make room for the next move.</h2>
+      <p>Use your <strong>arrow keys</strong> or <strong>WASD</strong> to slide the tiles. On your phone, <strong>swipe the board</strong>.</p>
+      <p>Two matching tiles become one. Reach <strong>2048</strong>, then see how far you can go.</p>
+    </section>
+    <p id="storage-notice" class="notice" role="status" hidden></p>
+    <p id="status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+    <footer>One board. One move at a time.<br><span>Your progress stays on this device.</span></footer>
+    <noscript><p class="notice">Enable JavaScript to play 2048.</p></noscript>
+  </main>
+</body>
+</html>
